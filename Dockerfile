@@ -9,6 +9,7 @@ RUN apt-get update && \
   neofetch \
   ffmpeg \
   wget \
+  pm2  \
   chromium \ 
   imagemagick && \
   rm -rf /var/lib/apt/lists/*
@@ -19,4 +20,4 @@ RUN set -x \
 
 EXPOSE 8080
 
-CMD ["node", ".", "--db", "'mongodb+srv://mongodb:BMlnA0BvE3ultitP@cluster0.mcylj5z.mongodb.net/?retryWrites=true&w=majority'"]`
+CMD ["pm2", "start", "node", "."]`
